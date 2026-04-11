@@ -9,6 +9,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://verifiq.bbmw0.com">
   <title>VERIFIQ - IFC Compliance Checker | BBMW0 Technologies</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230B1F45'/><rect x='4' y='4' width='24' height='24' rx='5' fill='%230E7C86'/><text x='16' y='22' font-family='Arial' font-size='14' font-weight='900' fill='%2314B8C8' text-anchor='middle'>VQ</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
   <style>
@@ -58,6 +59,13 @@
     @keyframes glow     { 0%,100% { box-shadow:0 0 20px rgba(14,124,134,.3); } 50% { box-shadow:0 0 40px rgba(14,124,134,.6); } }
     @keyframes borderPulse { 0%,100% { border-color:rgba(14,124,134,.3); } 50% { border-color:rgba(20,184,200,.8); } }
     @keyframes blink    { 0%,100% { opacity:1; } 50% { opacity:.3; } }
+    @keyframes ticker   { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
+    .ticker-track {
+      display: inline-flex; gap: 10px; white-space: nowrap;
+      animation: ticker 30s linear infinite;
+      padding: 4px 0;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
 
     .fade-up  { animation: fadeUp .7s ease both; }
     .fade-up2 { animation: fadeUp .7s .15s ease both; }
@@ -85,11 +93,11 @@
     }
     .nav-back:hover { color: var(--teal2); }
     .nav-back-logo {
-      width: 28px; height: 28px; border-radius: 6px;
-      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+      width: 32px; height: 32px; border-radius: 6px;
+      background: rgba(201,168,76,.08); border: 1px solid rgba(201,168,76,.2);
       display: flex; align-items: center; justify-content: center;
-      font-size: 11px; font-weight: 900; color: var(--teal2);
-      transition: background .2s;
+      transition: background .2s; flex-shrink: 0;
+      overflow: hidden; padding: 4px;
     }
     .nav-back:hover .nav-back-logo { background: rgba(14,124,134,.2); }
 
@@ -477,7 +485,12 @@
     <div style="display:flex;align-items:center;gap:20px">
       <!-- BBMW0 back link -->
       <a class="nav-back" href="https://bbmw0.com" title="Back to BBMW0 Technologies">
-        <div class="nav-back-logo">B</div>
+        <div class="nav-back-logo"><svg width="22" height="22" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4L28 12L20 20L12 12Z" fill="#C9A84C"/>
+          <path d="M28 12L36 20L28 28L20 20Z" fill="#E8C96A"/>
+          <path d="M20 20L28 28L20 36L12 28Z" fill="#C9A84C"/>
+          <path d="M12 12L20 20L12 28L4 20Z" fill="#E8C96A"/>
+        </svg></div>
         <span>BBMW0 Technologies</span>
       </a>
       <span style="color:rgba(255,255,255,.15);font-size:18px">&#8250;</span>
@@ -548,11 +561,11 @@
   </div>
 </section>
 
-<!-- ── AGENCIES ── -->
-<div class="agencies-strip">
-  <div class="agencies-inner">
-    <div class="agencies-label">Regulatory Coverage</div>
-    <div class="agencies">
+<!-- ── AGENCIES TICKER ── -->
+<div class="agencies-strip" style="overflow:hidden;padding:28px 0">
+  <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--light);text-align:center;margin-bottom:14px">Regulatory Coverage</div>
+  <div style="position:relative;overflow:hidden;mask-image:linear-gradient(90deg,transparent,black 8%,black 92%,transparent);">
+    <div class="ticker-track">
       <span class="ag ag-bca">BCA</span>
       <span class="ag ag-ura">URA</span>
       <span class="ag ag-scdf">SCDF</span>
@@ -565,6 +578,31 @@
       <span class="ag ag-my">MS 1184:2014</span>
       <span class="ag ag-my">JBPM 2020</span>
       <span class="ag ag-my">NBeS 2024 (CIDB)</span>
+      <span class="ag ag-bca">Building Control Act</span>
+      <span class="ag ag-ura">Planning Act</span>
+      <span class="ag ag-scdf">Fire Safety Act</span>
+      <span class="ag ag-nea">SS 553:2016</span>
+      <span class="ag ag-my">UBBL 1984</span>
+      <span class="ag ag-pub">Surface Water Drainage</span>
+      <!-- duplicate for seamless loop -->
+      <span class="ag ag-bca">BCA</span>
+      <span class="ag ag-ura">URA</span>
+      <span class="ag ag-scdf">SCDF</span>
+      <span class="ag ag-lta">LTA</span>
+      <span class="ag ag-nea">NEA</span>
+      <span class="ag ag-pub">PUB</span>
+      <span class="ag ag-nparks">NParks</span>
+      <span class="ag ag-sla">SLA</span>
+      <span class="ag ag-my">UBBL PG I-IX</span>
+      <span class="ag ag-my">MS 1184:2014</span>
+      <span class="ag ag-my">JBPM 2020</span>
+      <span class="ag ag-my">NBeS 2024 (CIDB)</span>
+      <span class="ag ag-bca">Building Control Act</span>
+      <span class="ag ag-ura">Planning Act</span>
+      <span class="ag ag-scdf">Fire Safety Act</span>
+      <span class="ag ag-nea">SS 553:2016</span>
+      <span class="ag ag-my">UBBL 1984</span>
+      <span class="ag ag-pub">Surface Water Drainage</span>
     </div>
   </div>
 </div>
@@ -769,17 +807,49 @@
       document.getElementById('modalSuccess').style.display = 'none';
     }, 300);
   }
-  function submitEnquiry() {
-    const name  = document.getElementById('m-name').value.trim();
-    const email = document.getElementById('m-email').value.trim();
-    const tier  = document.getElementById('m-tier').value;
+  async function submitEnquiry() {
+    const name    = document.getElementById('m-name').value.trim();
+    const email   = document.getElementById('m-email').value.trim();
+    const tier    = document.getElementById('m-tier').value;
     if (!name || !email || !tier) { alert('Please fill in Name, Email, and Licence Tier.'); return; }
-    const msg   = document.getElementById('m-msg').value.trim();
-    const body  = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCompany: ${document.getElementById('m-company').value.trim()}\nLicence Tier: ${tier}\n\nMessage:\n${msg}`);
-    window.location.href = `mailto:bbmw0@hotmail.com?subject=VERIFIQ Licence Enquiry - ${tier}&body=${body}`;
-    document.getElementById('successEmail').textContent = email;
-    document.getElementById('modalForm').style.display = 'none';
-    document.getElementById('modalSuccess').style.display = 'block';
+    const company = document.getElementById('m-company').value.trim();
+    const msg     = document.getElementById('m-msg').value.trim();
+
+    const btn = document.querySelector('.btn-submit');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch('https://bbmw0-mailer.azurewebsites.net/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          company,
+          subject: 'VERIFIQ Licence Enquiry: ' + tier,
+          message: 'Licence Tier: ' + tier + '\n\n' + (msg || '(no message)')
+        })
+      });
+      const data = await res.json();
+      if (data.success) {
+        document.getElementById('successEmail').textContent = email;
+        document.getElementById('modalForm').style.display = 'none';
+        document.getElementById('modalSuccess').style.display = 'block';
+      } else {
+        throw new Error(data.error || 'Send failed');
+      }
+    } catch (err) {
+      // Fallback to mailto if Azure fails
+      const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\nCompany: ' + company + '\nLicence Tier: ' + tier + '\n\nMessage:\n' + msg);
+      window.open('mailto:bbmw0@hotmail.com?subject=VERIFIQ Licence Enquiry: ' + encodeURIComponent(tier) + '&body=' + body);
+      document.getElementById('successEmail').textContent = email;
+      document.getElementById('modalForm').style.display = 'none';
+      document.getElementById('modalSuccess').style.display = 'block';
+    } finally {
+      btn.textContent = 'Send Enquiry';
+      btn.disabled = false;
+    }
   }
   // Close modal on Escape
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
