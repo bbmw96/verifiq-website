@@ -8,6 +8,10 @@
   <meta property="og:description" content="Singapore CORENET-X + Malaysia NBeS. 20 check levels. 50+ design rules. 100% offline.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://verifiq.bbmw0.com">
+  <meta property="og:image" content="https://bbmw0.com/verifiq-og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VERIFIQ - IFC Compliance Checker">
+  <meta name="twitter:description" content="Singapore CORENET-X + Malaysia NBeS. 20 check levels. 89 agency rules. 100% offline.">
   <title>VERIFIQ - IFC Compliance Checker | BBMW0 Technologies</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230B1F45'/><rect x='4' y='4' width='24' height='24' rx='5' fill='%230E7C86'/><text x='16' y='22' font-family='Arial' font-size='14' font-weight='900' fill='%2314B8C8' text-anchor='middle'>VQ</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -424,6 +428,33 @@
       .modal { padding: 28px 20px; }
     }
   </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VERIFIQ",
+  "description": "IFC compliance checker for Singapore CORENET-X (IFC+SG 2025) and Malaysia NBeS (UBBL 1984). 20 data check levels, 89 agency rules, 50+ design code rules.",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "description": "Free trial available. Paid perpetual licences from Individual to Site Licence."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "BBMW0 Technologies",
+    "url": "https://bbmw0.com",
+    "email": "bbmw0@hotmail.com"
+  },
+  "url": "https://verifiq.bbmw0.com",
+  "downloadUrl": "https://github.com/bbmw96/verifiq/releases/latest",
+  "softwareVersion": "1.2.0",
+  "releaseNotes": "https://github.com/bbmw96/verifiq/releases/tag/v1.2.0"
+}
+</script>
 </head>
 <body>
 
@@ -496,9 +527,11 @@
       </div>
     </div>
     <div class="nav-links">
+      <a href="#how">How It Works</a>
       <a href="#features">Features</a>
       <a href="#checks">Check Levels</a>
       <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
       <a href="#download">Download</a>
       <a href="https://github.com/bbmw96/verifiq" target="_blank">GitHub</a>
     </div>
@@ -601,6 +634,37 @@
     </div>
   </div>
 </div>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="section section-alt" id="how">
+  <div class="container">
+    <div class="eyebrow">How It Works</div>
+    <h2 class="sec-h">From IFC file to compliance report in minutes</h2>
+    <p class="sec-sub">Three steps. No cloud. No account. Runs entirely on your machine.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;position:relative">
+      <!-- Connector line -->
+      <div style="position:absolute;top:40px;left:calc(16.6% + 24px);right:calc(16.6% + 24px);height:2px;background:linear-gradient(90deg,var(--teal),var(--teal2));display:none" class="connector-line"></div>
+      <div style="text-align:center;padding:32px 24px;background:white;border-radius:16px;border:1px solid var(--silver);box-shadow:var(--sh);position:relative">
+        <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal2));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:28px">&#128194;</div>
+        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);width:28px;height:28px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;border:2px solid white">1</div>
+        <h3 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px">Open IFC File</h3>
+        <p style="font-size:13px;color:var(--mid);line-height:1.6">Drag and drop or browse for your IFC 4 file. Supports .ifc and .ifczip formats from any BIM authoring tool.</p>
+      </div>
+      <div style="text-align:center;padding:32px 24px;background:white;border-radius:16px;border:1px solid var(--silver);box-shadow:var(--sh);position:relative">
+        <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal2));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:28px">&#9881;</div>
+        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);width:28px;height:28px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;border:2px solid white">2</div>
+        <h3 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px">Run Validation</h3>
+        <p style="font-size:13px;color:var(--mid);line-height:1.6">Select Singapore, Malaysia, or both. VERIFIQ runs all 20 check levels and 89 agency rules in seconds. 100% offline.</p>
+      </div>
+      <div style="text-align:center;padding:32px 24px;background:white;border-radius:16px;border:1px solid var(--silver);box-shadow:var(--sh);position:relative">
+        <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--teal2));display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:28px">&#128196;</div>
+        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);width:28px;height:28px;border-radius:50%;background:var(--navy);color:white;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;border:2px solid white">3</div>
+        <h3 style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px">Export Report</h3>
+        <p style="font-size:13px;color:var(--mid);line-height:1.6">Export to Word, PDF, Excel, CSV, BCF, JSON, XML, or Markdown. 8 professional templates including BCA, SCDF, and NBeS formats.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ── FEATURES ── -->
 <section class="section" id="features">
@@ -752,6 +816,78 @@
   </div>
 </section>
 
+
+<!-- ── FAQ ── -->
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div class="eyebrow">FAQ</div>
+    <h2 class="sec-h">Frequently Asked Questions</h2>
+    <div style="max-width:760px;margin-top:40px">
+
+      <details style="border:1px solid var(--silver);border-radius:10px;margin-bottom:12px;background:white;overflow:hidden">
+        <summary style="padding:18px 20px;font-weight:700;font-size:14px;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Does VERIFIQ require an internet connection?
+          <span style="font-size:18px;color:var(--teal);flex-shrink:0">+</span>
+        </summary>
+        <div style="padding:0 20px 18px;font-size:13px;color:var(--mid);line-height:1.7">
+          No. VERIFIQ is 100% offline. Your IFC files never leave your machine. All 20 check levels, the 3D viewer, and all export formats work without any internet connection. The licence key is verified locally using SHA-256.
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--silver);border-radius:10px;margin-bottom:12px;background:white;overflow:hidden">
+        <summary style="padding:18px 20px;font-weight:700;font-size:14px;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Which BIM authoring tools does VERIFIQ support?
+          <span style="font-size:18px;color:var(--teal);flex-shrink:0">+</span>
+        </summary>
+        <div style="padding:0 20px 18px;font-size:13px;color:var(--mid);line-height:1.7">
+          VERIFIQ reads any valid IFC 4 file (.ifc or .ifczip). It works with exports from ArchiCAD, Revit, Vectorworks, Tekla, Bentley OpenBuildings, and any other tool that can export to IFC 4 Reference View ADD2 TC1 as required by CORENET-X.
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--silver);border-radius:10px;margin-bottom:12px;background:white;overflow:hidden">
+        <summary style="padding:18px 20px;font-weight:700;font-size:14px;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          What is the difference between the Singapore and Malaysia modes?
+          <span style="font-size:18px;color:var(--teal);flex-shrink:0">+</span>
+        </summary>
+        <div style="padding:0 20px 18px;font-size:13px;color:var(--mid);line-height:1.7">
+          Singapore mode checks against CORENET-X (IFC+SG 2025, COP3) with rules from all 8 agencies: BCA, URA, SCDF, LTA, NEA, PUB, NParks, and SLA. Malaysia mode checks against NBeS (UBBL 1984, CIDB 2024) covering all 9 Purpose Groups under UBBL Parts III-IX, MS 1184:2014, and JBPM Fire Safety Requirements 2020. Combined mode runs both simultaneously.
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--silver);border-radius:10px;margin-bottom:12px;background:white;overflow:hidden">
+        <summary style="padding:18px 20px;font-weight:700;font-size:14px;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Are the licence keys perpetual?
+          <span style="font-size:18px;color:var(--teal);flex-shrink:0">+</span>
+        </summary>
+        <div style="padding:0 20px 18px;font-size:13px;color:var(--mid);line-height:1.7">
+          Yes. All paid licence keys are perpetual with no expiry date, no renewal fees, and no subscription. You pay once and use VERIFIQ forever on the number of machines covered by your tier.
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--silver);border-radius:10px;margin-bottom:12px;background:white;overflow:hidden">
+        <summary style="padding:18px 20px;font-weight:700;font-size:14px;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          What are the system requirements?
+          <span style="font-size:18px;color:var(--teal);flex-shrink:0">+</span>
+        </summary>
+        <div style="padding:0 20px 18px;font-size:13px;color:var(--mid);line-height:1.7">
+          Windows 10 (version 1903 or later) or Windows 11. .NET 8 Desktop Runtime (free download from Microsoft). Microsoft WebView2 Runtime (pre-installed on Windows 11, free download for Windows 10). 4 GB RAM minimum, 8 GB recommended for large IFC models. 500 MB free disk space.
+        </div>
+      </details>
+
+      <details style="border:1px solid var(--silver);border-radius:10px;margin-bottom:12px;background:white;overflow:hidden">
+        <summary style="padding:18px 20px;font-weight:700;font-size:14px;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center">
+          Can VERIFIQ check multiple discipline files at once?
+          <span style="font-size:18px;color:var(--teal);flex-shrink:0">+</span>
+        </summary>
+        <div style="padding:0 20px 18px;font-size:13px;color:var(--mid);line-height:1.7">
+          Yes. VERIFIQ can load and validate multiple IFC files simultaneously — architectural, structural, MEP, and civil files together. It checks GUID uniqueness across all loaded files and validates spatial relationships between disciplines.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
 <!-- ── CTA ── -->
 <div class="cta-band">
   <div class="container">
@@ -767,24 +903,78 @@
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
-    <div>
+    <!-- Brand -->
+    <div style="min-width:200px">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
-        <div style="width:32px;height:32px;border-radius:7px;background:linear-gradient(135deg,var(--navy2),var(--teal));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:var(--teal2)">VQ</div>
+        <div style="width:36px;height:36px;border-radius:8px;background:linear-gradient(135deg,var(--navy2),var(--teal));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:var(--teal2)">VQ</div>
         <div class="footer-brand-name">VERIFIQ</div>
       </div>
-      <div class="footer-brand-sub">IFC Compliance Checker by BBMW0 Technologies</div>
+      <div class="footer-brand-sub">IFC Compliance Checker</div>
+      <div style="font-size:11px;color:#334155;margin-top:4px">by BBMW0 Technologies, United Kingdom</div>
+      <div style="margin-top:14px;display:flex;gap:10px">
+        <a href="https://github.com/bbmw96/verifiq" target="_blank"
+           style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#64748B;font-size:15px;transition:background .2s"
+           title="GitHub">&#128025;</a>
+        <a href="mailto:bbmw0@hotmail.com"
+           style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#64748B;font-size:15px;transition:background .2s"
+           title="Email">&#9993;</a>
+      </div>
     </div>
-    <div class="footer-links">
-      <a href="https://github.com/bbmw96/verifiq" target="_blank">GitHub</a>
-      <a href="https://github.com/bbmw96/verifiq/releases" target="_blank">Releases</a>
-      <a href="mailto:bbmw0@hotmail.com">Contact</a>
-      <a href="https://bbmw0.com" target="_blank">BBMW0 Technologies</a>
-      <a href="https://info.corenet.gov.sg" target="_blank">CORENET-X</a>
-      <a href="https://nbes.cidb.gov.my" target="_blank">NBeS</a>
+
+    <!-- Products -->
+    <div>
+      <div style="font-size:11px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px">Products</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <a href="https://verifiq.bbmw0.com" style="font-size:13px;color:#475569;display:flex;align-items:center;gap:6px;transition:color .15s">
+          <span style="width:18px;height:18px;border-radius:4px;background:linear-gradient(135deg,#0B1F45,#0E7C86);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:900;color:#14B8C8;flex-shrink:0">VQ</span>
+          VERIFIQ
+        </a>
+        <a href="https://bbmw0.com/jzw-bim-ai/" target="_blank" style="font-size:13px;color:#475569;display:flex;align-items:center;gap:6px;transition:color .15s">
+          <span style="width:18px;height:18px;border-radius:4px;background:#1B3A6B;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:900;color:#C9A84C;flex-shrink:0">JZ</span>
+          JZW BIM AI
+        </a>
+      </div>
     </div>
+
+    <!-- Resources -->
+    <div>
+      <div style="font-size:11px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px">Resources</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <a href="https://github.com/bbmw96/verifiq/releases" target="_blank" style="font-size:13px;color:#475569;transition:color .15s">Download</a>
+        <a href="https://github.com/bbmw96/verifiq" target="_blank" style="font-size:13px;color:#475569;transition:color .15s">GitHub Source</a>
+        <a href="#features" style="font-size:13px;color:#475569;transition:color .15s">Features</a>
+        <a href="#checks" style="font-size:13px;color:#475569;transition:color .15s">Check Levels</a>
+        <a href="#pricing" style="font-size:13px;color:#475569;transition:color .15s">Pricing</a>
+      </div>
+    </div>
+
+    <!-- Company -->
+    <div>
+      <div style="font-size:11px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px">Company</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <a href="https://bbmw0.com" target="_blank" style="font-size:13px;color:#475569;transition:color .15s">BBMW0 Technologies</a>
+        <a href="https://bbmw0.com/#about" target="_blank" style="font-size:13px;color:#475569;transition:color .15s">About</a>
+        <a href="https://bbmw0.com/#contact" target="_blank" style="font-size:13px;color:#475569;transition:color .15s">Contact</a>
+        <a href="https://bbmw0.com/privacy/" target="_blank" style="font-size:13px;color:#475569;transition:color .15s">Privacy Policy</a>
+      </div>
+    </div>
+
+    <!-- Regulatory -->
+    <div>
+      <div style="font-size:11px;font-weight:700;color:#475569;text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px">Regulatory</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <a href="https://info.corenet.gov.sg" target="_blank" style="font-size:13px;color:#475569;transition:color .15s">CORENET-X</a>
+        <a href="https://nbes.cidb.gov.my" target="_blank" style="font-size:13px;color:#475569;transition:color .15s">NBeS (CIDB)</a>
+        <a href="https://www.bca.gov.sg" target="_blank" style="font-size:13px;color:#475569;transition:color .15s">BCA Singapore</a>
+        <a href="https://www.scdf.gov.sg" target="_blank" style="font-size:13px;color:#475569;transition:color .15s">SCDF</a>
+      </div>
+    </div>
+
     <div class="footer-copy">
-      VERIFIQ is developed by BBMW0 Technologies, United Kingdom.<br>
-      &copy; 2026 BBMW0 Technologies. All rights reserved. Unauthorised reproduction, redistribution or reverse engineering is prohibited.
+      VERIFIQ is developed by BBMW0 Technologies, United Kingdom. &copy; 2026 BBMW0 Technologies. All rights reserved.<br>
+      Unauthorised reproduction, redistribution or reverse engineering is prohibited.
+      &nbsp;&bull;&nbsp; <a href="https://bbmw0.com/privacy/" style="color:#475569">Privacy Policy</a>
+      &nbsp;&bull;&nbsp; <a href="mailto:bbmw0@hotmail.com" style="color:#475569">bbmw0@hotmail.com</a>
     </div>
   </div>
 </footer>
@@ -849,5 +1039,19 @@
   // Close modal on Escape
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 </script>
+
+<!-- Cookie banner -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(11,31,69,.97);border-top:1px solid rgba(14,124,134,.3);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+  <p style="font-size:12px;color:rgba(255,255,255,.7);margin:0;max-width:700px">
+    This site uses only essential cookies for functionality. No tracking, no advertising, no analytics.
+    <a href="https://bbmw0.com/privacy/" style="color:var(--teal2);margin-left:4px">Privacy Policy</a>
+  </p>
+  <button onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('vq-cookies','1')"
+          style="background:var(--teal);color:white;border:none;border-radius:7px;padding:8px 20px;font-size:13px;font-weight:700;cursor:pointer;flex-shrink:0;font-family:inherit">
+    Accept
+  </button>
+</div>
+<script>if(localStorage.getItem('vq-cookies'))document.getElementById('cookie-banner').style.display='none';</script>
+
 </body>
 </html>
