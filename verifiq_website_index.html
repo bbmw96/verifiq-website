@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VERIFIQ - IFC Compliance Checker for Singapore CORENET-X and Malaysia NBeS</title>
+  <meta name="description" content="VERIFIQ checks IFC BIM models against Singapore CORENET-X (IFC+SG 2025) and Malaysia NBeS requirements. 169+ validation checks, 128 classification codes, IFC Property Editor, Director's Report.">
+  <style>
+    :root {
+      --navy: #0F1E3C;
+      --teal: #14B8A6;
+      --amber: #F59E0B;
+      --white: #FFFFFF;
+      --light-grey: #F1F5F9;
+      --mid-grey: #64748B;
+      --border: #E2E8F0;
+      --red: #EF4444;
+      --green: #22C55E;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--navy); background: white; }
+
+    /* NAV */
+    nav { background: var(--navy); padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .nav-logo { display: flex; align-items: center; gap: 12px; color: white; font-weight: 800; font-size: 20px; text-decoration: none; }
+    .nav-logo-icon { width: 36px; height: 36px; background: var(--teal); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 14px; color: white; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: rgba(255,255,255,.8); text-decoration: none; font-size: 14px; transition: color .2s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { background: var(--teal); color: white; padding: 9px 20px; border-radius: 6px; font-weight: 700; font-size: 14px; text-decoration: none; transition: opacity .2s; }
+    .nav-cta:hover { opacity: .9; }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, var(--navy) 0%, #1a3060 100%); padding: 90px 40px 80px; text-align: center; color: white; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 70% 50%, rgba(20,184,166,.15), transparent 60%); }
+    .hero-badge { display: inline-block; background: rgba(20,184,166,.2); border: 1px solid rgba(20,184,166,.4); color: var(--teal); padding: 5px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 20px; }
+    .hero h1 { font-size: 52px; font-weight: 800; line-height: 1.1; max-width: 800px; margin: 0 auto 20px; }
+    .hero h1 span { color: var(--teal); }
+    .hero p { font-size: 18px; color: rgba(255,255,255,.75); max-width: 640px; margin: 0 auto 36px; line-height: 1.7; }
+    .hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--teal); color: white; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 16px; text-decoration: none; transition: all .2s; }
+    .btn-primary:hover { background: #0EA5A0; transform: translateY(-1px); }
+    .btn-ghost { background: rgba(255,255,255,.1); color: white; border: 1px solid rgba(255,255,255,.25); padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 16px; text-decoration: none; transition: all .2s; }
+    .btn-ghost:hover { background: rgba(255,255,255,.15); }
+    .hero-stats { display: flex; gap: 40px; justify-content: center; margin-top: 52px; flex-wrap: wrap; }
+    .stat { text-align: center; }
+    .stat-num { font-size: 36px; font-weight: 800; color: var(--teal); display: block; }
+    .stat-label { font-size: 13px; color: rgba(255,255,255,.6); margin-top: 4px; }
+
+    /* TWO QUESTIONS */
+    .questions { background: var(--light-grey); padding: 72px 40px; }
+    .questions-inner { max-width: 1100px; margin: 0 auto; }
+    .section-tag { font-size: 12px; font-weight: 700; color: var(--teal); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
+    .section-title { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
+    .section-sub { font-size: 16px; color: var(--mid-grey); max-width: 620px; margin-bottom: 40px; line-height: 1.7; }
+    .q-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .q-grid { grid-template-columns: 1fr; } }
+    .q-card { background: white; border-radius: 12px; padding: 28px; border: 1px solid var(--border); position: relative; }
+    .q-num { font-size: 48px; font-weight: 900; color: var(--teal); opacity: .15; position: absolute; top: 16px; right: 20px; line-height: 1; }
+    .q-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--navy); }
+    .q-body { font-size: 14px; color: var(--mid-grey); line-height: 1.7; }
+
+    /* FEATURES */
+    .features { padding: 80px 40px; max-width: 1100px; margin: 0 auto; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin-top: 40px; }
+    .feat-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 24px; transition: box-shadow .2s; }
+    .feat-card:hover { box-shadow: 0 4px 24px rgba(15,30,60,.08); }
+    .feat-icon { font-size: 28px; margin-bottom: 12px; }
+    .feat-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .feat-body { font-size: 13px; color: var(--mid-grey); line-height: 1.7; }
+    .feat-tag { display: inline-block; background: var(--teal); color: white; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-bottom: 10px; text-transform: uppercase; letter-spacing: .05em; }
+    .feat-tag.new { background: var(--amber); }
+
+    /* COVERAGE TABLE */
+    .coverage { background: var(--navy); color: white; padding: 80px 40px; }
+    .coverage-inner { max-width: 1000px; margin: 0 auto; }
+    .cov-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; }
+    .cov-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 10px; padding: 20px; text-align: center; }
+    .cov-num { font-size: 40px; font-weight: 900; color: var(--teal); display: block; }
+    .cov-label { font-size: 13px; color: rgba(255,255,255,.65); margin-top: 6px; }
+
+    /* HOW IT WORKS */
+    .how { padding: 80px 40px; background: var(--light-grey); }
+    .how-inner { max-width: 900px; margin: 0 auto; }
+    .steps { display: grid; gap: 20px; margin-top: 40px; }
+    .step { background: white; border-radius: 10px; padding: 22px 24px; display: flex; gap: 20px; align-items: flex-start; border: 1px solid var(--border); }
+    .step-num { background: var(--teal); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; flex-shrink: 0; margin-top: 2px; }
+    .step-title { font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+    .step-body { font-size: 13px; color: var(--mid-grey); line-height: 1.6; }
+
+    /* AGENCIES */
+    .agencies { padding: 72px 40px; max-width: 1100px; margin: 0 auto; }
+    .agency-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; margin-top: 36px; }
+    .agency-pill { background: var(--light-grey); border-radius: 8px; padding: 14px 18px; }
+    .agency-code { font-weight: 800; font-size: 18px; color: var(--navy); }
+    .agency-name { font-size: 11px; color: var(--mid-grey); margin-top: 3px; }
+
+    /* FORMATS */
+    .formats { background: var(--navy); padding: 72px 40px; color: white; }
+    .formats-inner { max-width: 1000px; margin: 0 auto; }
+    .fmt-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 36px; }
+    .fmt-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 8px; padding: 16px 20px; }
+    .fmt-label { font-weight: 700; font-size: 14px; color: var(--teal); margin-bottom: 6px; }
+    .fmt-desc { font-size: 12px; color: rgba(255,255,255,.65); line-height: 1.6; }
+
+    /* DOWNLOAD */
+    .download { padding: 80px 40px; text-align: center; }
+    .download-box { background: var(--navy); color: white; max-width: 600px; margin: 0 auto; border-radius: 16px; padding: 48px 40px; }
+    .download-box h2 { font-size: 32px; font-weight: 800; margin-bottom: 10px; }
+    .download-box p { color: rgba(255,255,255,.7); font-size: 15px; margin-bottom: 28px; line-height: 1.6; }
+    .download-meta { font-size: 12px; color: rgba(255,255,255,.45); margin-top: 14px; }
+
+    /* FOOTER */
+    footer { background: var(--navy); color: rgba(255,255,255,.5); text-align: center; padding: 28px 40px; font-size: 13px; border-top: 1px solid rgba(255,255,255,.08); }
+    footer a { color: var(--teal); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon">VQ</div>
+    VERIFIQ
+  </a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#coverage">Coverage</a>
+    <a href="#how">How It Works</a>
+    <a href="https://github.com/bbmw96/verifiq" target="_blank">GitHub</a>
+    <a href="#download" class="nav-cta">⬇ Download v1.3.0</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">v1.3.0 — April 2026 · Windows 10/11</div>
+  <h1>IFC Compliance Checker for <span>Singapore</span> & Malaysia</h1>
+  <p>Validate IFC BIM models against CORENET-X IFC+SG 2025 and NBeS requirements. 169+ checks, 128 classification codes, IFC Property Editor, Director's Report — fully offline.</p>
+  <div class="hero-buttons">
+    <a href="#download" class="btn-primary">⬇ Download Free</a>
+    <a href="https://github.com/bbmw96/verifiq" target="_blank" class="btn-ghost">⭐ View on GitHub</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num">169+</span><div class="stat-label">Checks per element</div></div>
+    <div class="stat"><span class="stat-num">128</span><div class="stat-label">Classification codes</div></div>
+    <div class="stat"><span class="stat-num">8</span><div class="stat-label">SG agencies</div></div>
+    <div class="stat"><span class="stat-num">20</span><div class="stat-label">IFC data levels</div></div>
+    <div class="stat"><span class="stat-num">100%</span><div class="stat-label">Offline</div></div>
+  </div>
+</section>
+
+<!-- TWO QUESTIONS -->
+<section class="questions">
+  <div class="questions-inner">
+    <div class="section-tag">Core Purpose</div>
+    <div class="section-title">Two questions answered before every submission</div>
+    <div class="section-sub">VERIFIQ is built around the two checks every BIM coordinator needs to confirm before uploading to CORENET-X or NBeS.</div>
+    <div class="q-grid">
+      <div class="q-card">
+        <div class="q-num">1</div>
+        <div class="q-title">Is the IFC model complete?</div>
+        <div class="q-body">Is every element in the model populated with all the data that Singapore CORENET-X (IFC+SG 2025) and Malaysia NBeS (UBBL 1984) require? Checks entity classes, classifications, all Pset_ and SGPset_ property sets, property values, data types, georeferencing, and geometry — for all 8 Singapore agencies simultaneously.</div>
+      </div>
+      <div class="q-card">
+        <div class="q-num">2</div>
+        <div class="q-title">Is the classification chain complete?</div>
+        <div class="q-body">When a classification code is present on an element (e.g. A-WAL-EXW-01 for an external wall), are all the related SGPset_ property sets and their required property values also present? VERIFIQ checks the full classification-to-property chain for all 128 embedded IFC+SG codes, per agency, per CORENET-X gateway.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="section-tag">Features</div>
+  <div class="section-title">Everything in v1.3.0</div>
+  <div class="section-sub">Built specifically for Singapore CORENET-X IFC+SG and Malaysia NBeS BIM submissions.</div>
+  <div class="features-grid">
+
+    <div class="feat-card">
+      <div class="feat-tag new">New in v1.3</div>
+      <div class="feat-icon">✏️</div>
+      <div class="feat-title">IFC Property Editor</div>
+      <div class="feat-body">Fix missing or incorrect property values directly in VERIFIQ without returning to ArchiCAD or Revit. VERIFIQ saves a corrected IFC file with _VERIFIQ_FIXED appended. Your original is never modified.</div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-tag new">New in v1.3</div>
+      <div class="feat-icon">📊</div>
+      <div class="feat-title">Director's Report</div>
+      <div class="feat-body">One-click executive brief: readiness verdict, 0-100 score, agency risk table (all 8 SG agencies), top 5 blockers, prioritised action plan with time estimates, gateway readiness, and model quality grade.</div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-tag new">New in v1.3</div>
+      <div class="feat-icon">🏷️</div>
+      <div class="feat-title">128 Classification Codes</div>
+      <div class="feat-body">Every IFC+SG code from the CORENET-X Industry Mapping 2025 embedded with exact SGPset_ requirements. A-WAL, A-SLB, A-DOR, A-WIN, 17 space types, structural, M&amp;E, plumbing, civil, landscape, and Malaysia NBeS codes.</div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-tag new">New in v1.3</div>
+      <div class="feat-icon">📥</div>
+      <div class="feat-title">Industry Mapping Importer</div>
+      <div class="feat-body">Import the official BCA IFC+SG Industry Mapping Excel from info.corenet.gov.sg. VERIFIQ auto-detects columns and merges new codes into the runtime library. Always up to date with the latest BCA release.</div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">✅</div>
+      <div class="feat-title">20 IFC Data Check Levels</div>
+      <div class="feat-body">Entity class, predefined type, classification reference and edition, mandatory Pset_, SGPset_ property sets, property values, data types, enumerations, spatial containment, georeferencing (SVY21/GDM2000), GUID uniqueness, geometry validity.</div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">🇸🇬</div>
+      <div class="feat-title">89 Singapore Design Code Rules</div>
+      <div class="feat-body">URA room sizes, BCA Accessibility 2025, SCDF Fire Code 2018/2023, BCA Green Mark 2021, LTA parking dimensions, NEA ventilation, PUB WELS water efficiency. All 8 agencies, all element types.</div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">🇲🇾</div>
+      <div class="feat-title">60 Malaysia NBeS Rules</div>
+      <div class="feat-body">UBBL 1984 Parts I-IX, MS 1184:2014 accessibility, JBPM Fire Safety Standards 2020, GBI thermal requirements, MS EN 1992/1993 structural standards. Full OKU accessibility compliance checks.</div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">🧊</div>
+      <div class="feat-title">3D Viewer</div>
+      <div class="feat-body">Dual-engine: web-ifc WASM primary + C# geometry fallback. Elements colour-coded by compliance severity. Click any element to inspect its validation findings. Works fully offline.</div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">📤</div>
+      <div class="feat-title">10 Export Formats</div>
+      <div class="feat-body">PDF compliance report, Excel findings workbook, Word document, BCF issue file, CSV data export, JSON summary, DXF annotation, COBie, IFC markup, and VERIFIQ project file.</div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">📖</div>
+      <div class="feat-title">In-App User Guide</div>
+      <div class="feat-body">17-section comprehensive guide accessible via Help menu. Covers every feature including the Property Editor, Director's Report, Classification Library, and ArchiCAD/Revit IFC+SG export workflows.</div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">🔒</div>
+      <div class="feat-title">Fully Offline</div>
+      <div class="feat-body">No internet connection required after installation. All 169+ regulatory rules embedded locally. No data leaves your machine. Suitable for confidential government and developer projects.</div>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">📋</div>
+      <div class="feat-title">BCF Export</div>
+      <div class="feat-body">Export all compliance findings as a BCF file and import directly into ArchiCAD, Revit, or Tekla. Each issue is linked to the specific IFC element with the exact property that failed.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section class="coverage" id="coverage">
+  <div class="coverage-inner">
+    <div class="section-tag" style="color:var(--teal)">Coverage</div>
+    <div class="section-title" style="color:white">What VERIFIQ checks</div>
+    <div class="cov-grid">
+      <div class="cov-card"><span class="cov-num">20</span><div class="cov-label">IFC Data Levels</div></div>
+      <div class="cov-card"><span class="cov-num">128</span><div class="cov-label">Classification Codes</div></div>
+      <div class="cov-card"><span class="cov-num">89</span><div class="cov-label">Singapore Rules</div></div>
+      <div class="cov-card"><span class="cov-num">60</span><div class="cov-label">Malaysia Rules</div></div>
+      <div class="cov-card"><span class="cov-num">8</span><div class="cov-label">SG Agencies</div></div>
+      <div class="cov-card"><span class="cov-num">4</span><div class="cov-label">MY Agencies</div></div>
+      <div class="cov-card"><span class="cov-num">169+</span><div class="cov-label">Checks per element</div></div>
+      <div class="cov-card"><span class="cov-num">10</span><div class="cov-label">Export Formats</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="how-inner">
+    <div class="section-tag">Workflow</div>
+    <div class="section-title">From IFC to CORENET-X in 5 steps</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">Export IFC from your BIM tool</div>
+          <div class="step-body">From ArchiCAD: use the IFC+SG Export Translator from info.corenet.gov.sg. From Revit: use the IFC+SG shared parameters and export settings. Export as IFC4 Reference View.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">Open the IFC file in VERIFIQ</div>
+          <div class="step-body">Click Open IFC File. VERIFIQ parses the STEP file natively — no xBIM, no cloud upload, fully offline. Supports .ifc, .ifczip, and .ifcxml.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">Click Check All - Singapore</div>
+          <div class="step-body">One click runs all 20 IFC data levels, all 128 classification code checks, and all 89 Singapore design code rules simultaneously. The Director's Report is generated automatically.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-title">Fix issues with the Property Editor</div>
+          <div class="step-body">Click Fix on any Critical or Error finding. Enter the correct value. Click Apply Fixes. VERIFIQ saves a corrected IFC file — no need to return to ArchiCAD or Revit for property-level fixes.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div>
+          <div class="step-title">Export report and submit</div>
+          <div class="step-body">Export a PDF compliance report, BCF file for your BIM team, and Excel findings workbook. Submit the corrected IFC file to CORENET-X with confidence.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENCIES -->
+<section class="agencies">
+  <div class="section-tag">Singapore Coverage</div>
+  <div class="section-title">All 8 CORENET-X Agencies</div>
+  <div class="section-sub">Every element is checked against every agency that regulates it, simultaneously.</div>
+  <div class="agency-grid">
+    <div class="agency-pill"><div class="agency-code">BCA</div><div class="agency-name">Building & Construction Authority</div></div>
+    <div class="agency-pill"><div class="agency-code">URA</div><div class="agency-name">Urban Redevelopment Authority</div></div>
+    <div class="agency-pill"><div class="agency-code">SCDF</div><div class="agency-name">Singapore Civil Defence Force</div></div>
+    <div class="agency-pill"><div class="agency-code">LTA</div><div class="agency-name">Land Transport Authority</div></div>
+    <div class="agency-pill"><div class="agency-code">NEA</div><div class="agency-name">National Environment Agency</div></div>
+    <div class="agency-pill"><div class="agency-code">PUB</div><div class="agency-name">Public Utilities Board</div></div>
+    <div class="agency-pill"><div class="agency-code">NParks</div><div class="agency-name">National Parks Board</div></div>
+    <div class="agency-pill"><div class="agency-code">SLA</div><div class="agency-name">Singapore Land Authority</div></div>
+  </div>
+</section>
+
+<!-- FILE FORMATS -->
+<section class="formats">
+  <div class="formats-inner">
+    <div class="section-tag" style="color:var(--teal)">File Formats</div>
+    <div class="section-title" style="color:white">Supported inputs</div>
+    <div class="fmt-grid">
+      <div class="fmt-card">
+        <div class="fmt-label">.ifc .ifczip .ifcxml</div>
+        <div class="fmt-desc">Full validation — all 169+ checks. Recommended format for CORENET-X submission.</div>
+      </div>
+      <div class="fmt-card">
+        <div class="fmt-label">.rvt .pln .dwg .nwd .skp</div>
+        <div class="fmt-desc">Opens with IFC+SG export instructions for ArchiCAD, Revit, AutoCAD, Navisworks.</div>
+      </div>
+      <div class="fmt-card">
+        <div class="fmt-label">.bcf .bcfzip</div>
+        <div class="fmt-desc">BCF issue import — display alongside IFC compliance findings.</div>
+      </div>
+      <div class="fmt-card">
+        <div class="fmt-label">.xlsx</div>
+        <div class="fmt-desc">IFC+SG Industry Mapping Excel import — update classification rules from the official BCA document.</div>
+      </div>
+      <div class="fmt-card">
+        <div class="fmt-label">.obj .fbx .stl .step</div>
+        <div class="fmt-desc">Geometry reference only — VERIFIQ explains how to export to IFC from the source application.</div>
+      </div>
+      <div class="fmt-card">
+        <div class="fmt-label">.e57 .las .pdf .json</div>
+        <div class="fmt-desc">Point cloud, PDF drawing, and JSON data reference alongside the IFC model.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section class="download" id="download">
+  <div class="download-box">
+    <h2>Download VERIFIQ</h2>
+    <p>Free download for Windows 10/11 (x64). Trial mode available — no licence key required to try. Activate with a key for full features.</p>
+    <a href="https://github.com/bbmw96/verifiq/releases/latest" class="btn-primary" style="display:inline-block;margin-bottom:10px">
+      ⬇ Download VERIFIQ-v1.3.0-Setup.exe
+    </a>
+    <div class="download-meta">
+      Windows 10/11 (x64) · Requires .NET 8 Desktop Runtime · ~60 MB installer<br>
+      v1.3.0 — April 2026 · BBMW0 Technologies
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>VERIFIQ is developed by <strong style="color:white">BBMW0 Technologies</strong> and is not affiliated with BCA, GovTech, CORENET, URA, or any Singapore government agency.</p>
+  <p style="margin-top:8px">
+    <a href="https://github.com/bbmw96/verifiq">GitHub</a> &nbsp;·&nbsp;
+    <a href="mailto:bbmw0@hotmail.com">bbmw0@hotmail.com</a> &nbsp;·&nbsp;
+    IFC+SG 2025 (COP3) &nbsp;·&nbsp; NBeS 2024.1
+  </p>
+</footer>
+
+</body>
+</html>
