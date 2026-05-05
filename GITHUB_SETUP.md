@@ -1,6 +1,6 @@
 # GitHub Setup Instructions for VERIFIQ
 
-## Step 1 — Create GitHub Repository
+## Step 1 - Create GitHub Repository
 
 1. Go to **github.com/bbmw96** (already logged in)
 2. Click **New repository**
@@ -11,7 +11,7 @@
    - **Do NOT** initialise with README (you already have one)
 4. Click **Create repository**
 
-## Step 2 — Push Source Code
+## Step 2 - Push Source Code
 
 From a terminal in the VERIFIQ project folder:
 
@@ -25,10 +25,10 @@ git remote add origin https://github.com/bbmw96/verifiq.git
 git push -u origin main
 ```
 
-## Step 3 — Create v1.2.0 Release Tag
+## Step 3 - Create v1.2.0 Release Tag
 
 ```bash
-git tag -a v1.2.0 -m "VERIFIQ v1.2.0 — 3D viewer, 89 SG rules, health score dashboard"
+git tag -a v1.2.0 -m "VERIFIQ v1.2.0 - 3D viewer, 89 SG rules, health score dashboard"
 git push origin v1.2.0
 ```
 
@@ -37,7 +37,7 @@ This triggers the GitHub Actions workflow at `.github/workflows/release.yml` whi
 - Zips the output as `VERIFIQ-v1.2.0-win-x64.zip`
 - Creates a GitHub Release with download link
 
-## Step 4 — Enable GitHub Pages for Website
+## Step 4 - Enable GitHub Pages for Website
 
 1. In the GitHub repo, go to **Settings → Pages**
 2. Under **Source**, select **Deploy from a branch**
@@ -57,7 +57,7 @@ git push
 
 Your site will be live at: **https://bbmw96.github.io/verifiq**
 
-## Step 5 — Custom Domain (bbmw0.com/verifiq)
+## Step 5 - Custom Domain (bbmw0.com/verifiq)
 
 In GitHub Pages settings, add custom domain: `bbmw0.com`
 
