@@ -463,10 +463,10 @@
       <div style="background:var(--navy-3);border:1px solid var(--border);border-radius:12px;padding:36px;position:relative;overflow:hidden;transition:border-color .25s,transform .25s" onmouseover="this.style.borderColor='rgba(0,196,160,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
         <div style="font-size:68px;font-weight:900;color:rgba(0,196,160,.08);line-height:1;position:absolute;top:12px;right:20px;pointer-events:none;font-family:system-ui">1</div>
         <h3 style="font-size:18px;font-weight:800;margin-bottom:14px;color:var(--white)">Is the IFC model complete?</h3>
-        <p style="font-size:14px;color:var(--mid);line-height:1.8">Is every element populated with all the data that Singapore CORENET-X (IFC+SG COP 3.1, December 2025) and Malaysia NBeS (UBBL 1984) require? VERIFIQ checks entity classes, classifications, all Pset_ and SGPset_ property sets, property values, data types, enumerations, spatial containment, georeferencing (SVY21/GDM2000), GUID uniqueness and geometry validity for all 9 Singapore agencies simultaneously.</p>
+        <p style="font-size:14px;color:var(--mid);line-height:1.8">Is every element populated with all the data that Singapore CORENET-X (IFC+SG COP 3.1, December 2025) and Malaysia NBeS (UBBL 1984) require? VERIFIQ checks entity classes, classifications, all Pset_ and SGPset_ property sets, property values, data types, enumerations, spatial containment, georeferencing (SVY21/GDM2000), GUID uniqueness and geometry validity for all 10 Singapore agencies simultaneously.</p>
         <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
           <span style="background:rgba(0,196,160,.1);color:var(--teal);border-radius:4px;padding:3px 10px;font-size:11px;font-weight:700;font-family:monospace">20 check levels</span>
-          <span style="background:rgba(0,196,160,.1);color:var(--teal);border-radius:4px;padding:3px 10px;font-size:11px;font-weight:700;font-family:monospace">9 agencies</span>
+          <span style="background:rgba(0,196,160,.1);color:var(--teal);border-radius:4px;padding:3px 10px;font-size:11px;font-weight:700;font-family:monospace">10 agencies</span>
           <span style="background:rgba(0,196,160,.1);color:var(--teal);border-radius:4px;padding:3px 10px;font-size:11px;font-weight:700;font-family:monospace">SG + MY</span>
         </div>
       </div>
@@ -542,7 +542,7 @@
       <div class="feature"><div class="feature-icon">&#x1F9CA;</div><h3>3D Viewer with Compliance Overlay</h3><p>Elements colour-coded red, orange, yellow and green by compliance. First-person walk mode, section planes, measurement tools, storey filter, discipline filter and element property panel.</p><span class="feature-tag">3D Viewer</span></div>
       <div class="feature"><div class="feature-icon">&#x1F4E4;</div><h3>Export Reports - 8 Templates</h3><p>Professional, Executive Summary, BCA Submission, SCDF Submission, NBeS Submission, Technical, Audit and Minimal. Export to Word, Excel, PDF, CSV, JSON, HTML, Markdown or BCF.</p><span class="feature-tag">Export</span></div>
       <div class="feature"><div class="feature-icon">&#x2B06;</div><h3>Auto-Update System</h3><p>Silent background download. Install now or defer to when you close the application. Progress bar in the update banner. Mandatory update support for organisation deployments.</p><span class="feature-tag">Updates</span></div>
-      <div class="feature"><div class="feature-icon">&#x1F4CF;</div><h3>Rules Database</h3><p>Browse all 196 COP 3.1 classification codes, SGPset_ property requirements by entity, all 9 Singapore agency assignments, UBBL 1984 Malaysia rules and all 20 check level descriptions.</p><span class="feature-tag">Reference</span></div>
+      <div class="feature"><div class="feature-icon">&#x1F4CF;</div><h3>Rules Database</h3><p>Browse all 196 COP 3.1 classification codes, SGPset_ property requirements by entity, all 10 Singapore agency assignments, UBBL 1984 Malaysia rules and all 20 check level descriptions.</p><span class="feature-tag">Reference</span></div>
       <div class="feature"><div class="feature-icon">&#x1F50D;</div><h3>Search and Select</h3><p>Search all validated elements by name, GUID, IFC class, classification code or storey. Jump directly to findings for any element.</p><span class="feature-tag">Search</span></div>
       <div class="feature"><div class="feature-icon">&#x1F4D6;</div><h3>User Manual and User Guide</h3><p>Interactive step-by-step guide for onboarding. Nine-section reference manual covering all 20 checks, BIM software export guides, Singapore agencies, Malaysia NBeS, troubleshooting and full glossary.</p><span class="feature-tag">Documentation</span></div>
     </div>
@@ -584,8 +584,8 @@
 <section class="section-sm" id="agencies" style="background:var(--navy-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="container" style="text-align:center">
     <div class="section-tag" style="text-align:center">Singapore CORENET-X</div>
-    <h2 class="section-title">9 regulatory Agencies</h2>
-    <p class="section-sub" style="margin:0 auto 8px">VERIFIQ checks against all 9 agencies simultaneously. Click any agency to learn exactly what it checks and why it matters for your submission.</p>
+    <h2 class="section-title">10 regulatory Agencies</h2>
+    <p class="section-sub" style="margin:0 auto 8px">VERIFIQ checks against all 10 agencies simultaneously. Click any agency to learn exactly what it checks and why it matters for your submission.</p>
     <div class="agencies">
       <div class="agency-badge" onclick="showAgency('BCA')">BCA<small>Building and Construction Authority</small><span class="click-hint">Click for details</span></div>
       <div class="agency-badge" onclick="showAgency('SCDF')">SCDF<small>Singapore Civil Defence Force</small><span class="click-hint">Click for details</span></div>
@@ -595,6 +595,8 @@
       <div class="agency-badge" onclick="showAgency('SLA')">SLA<small>Singapore Land Authority</small><span class="click-hint">Click for details</span></div>
       <div class="agency-badge" onclick="showAgency('LTA')">LTA<small>Land Transport Authority</small><span class="click-hint">Click for details</span></div>
       <div class="agency-badge" onclick="showAgency('JTC')">JTC<small>JTC Corporation</small><span class="click-hint">Click for details</span></div>
+      <div class="agency-badge" onclick="showAgency('NParks')">NParks<small>National Parks Board</small><span class="click-hint">Click for details</span></div>
+      <div class="agency-badge" onclick="showAgency('HDB')">HDB<small>Housing and Development Board</small><span class="click-hint">Click for details</span></div>
     </div>
   </div>
 </section>
@@ -852,6 +854,18 @@ var AGENCY_DATA = {
     title: 'JTC Corporation (JTC)',
     subtitle: 'Industrial Land and Infrastructure',
     body: '<h4>Role and Mandate</h4><p>JTC Corporation is Singapore\'s leading developer and manager of industrial infrastructure, including industrial estates, science and business parks and specialised industrial facilities. For CORENET-X, JTC reviews industrial developments built on JTC land to ensure they meet specific industrial use and structural requirements.</p><h4>What VERIFIQ Checks for JTC</h4><ul><li>SGPset_JTCFloor on IfcSlab elements in industrial buildings</li><li>IndustrialUse property - classification of industrial use type (general, light, logistics)</li><li>FloorLoadCapacity - must meet minimum kPa requirements for industrial floor slabs</li><li>CeilingHeight - minimum clear height requirements for different industrial uses</li><li>LoadingAccessProvision - dock levellers and loading bay compliance</li><li>Tenancy unit demarcation data for multi-tenanted flatted factory buildings</li></ul><h4>Why It Matters</h4><p>JTC requirements only apply to developments on JTC-managed land. However, for those projects, the SGPset_JTCFloor and IndustrialUse data are mandatory for JTC to verify that the development meets the industrial plot conditions and lease requirements. Missing data causes the JTC review to pend until corrected.</p><a href="https://www.jtc.gov.sg" target="_blank" rel="noopener" class="modal-link">&#x1F517; jtc.gov.sg</a>&nbsp;<a href="https://www.jtc.gov.sg/industrial-land-and-space/Pages/default.aspx" target="_blank" rel="noopener" class="modal-link">&#x1F517; Industrial Land and Space</a>'
+  },
+  NParks: {
+    icon: '&#x1F333;',
+    title: 'National Parks Board (NParks)',
+    subtitle: 'Landscape, Greenery and Biodiversity',
+    body: '<h4>Role and Mandate</h4><p>The National Parks Board is Singapore\'s lead agency for greenery and biodiversity. For CORENET-X, NParks reviews landscape provision, replacement greenery and tree conservation under the LUSH (Landscaping for Urban Spaces and High-Rises) programme, ensuring developments meet their Green Plot Ratio and landscape replacement requirements.</p><h4>What VERIFIQ Checks for NParks</h4><ul><li>SGPset_LandscapeArea on IfcSpace and IfcSite elements (LUSH landscape replacement area)</li><li>SGPset_HeritageTree data where heritage trees are on or adjacent to the site</li><li>SGPset_StreetTree provisions along development frontages</li><li>Green Plot Ratio and landscape replacement area values for the LUSH programme</li><li>Plant species and biodiversity data (rules NPARKS-LUSH-001 and NPARKS-BIOD-001)</li><li>Skyrise greenery, landscape decks and communal planting classification</li></ul><h4>Why It Matters</h4><p>Under the LUSH programme most new developments must replace the greenery displaced by the building footprint. Missing or incomplete SGPset_LandscapeArea or tree conservation data prevents NParks from verifying the Green Plot Ratio, which holds up landscape clearance before approval is granted.</p><a href="https://www.nparks.gov.sg" target="_blank" rel="noopener" class="modal-link">&#x1F517; nparks.gov.sg</a>&nbsp;<a href="https://go.gov.sg/ifcsg" target="_blank" rel="noopener" class="modal-link">&#x1F517; IFC+SG Shared Parameters</a>'
+  },
+  HDB: {
+    icon: '&#x1F3E2;',
+    title: 'Housing and Development Board (HDB)',
+    subtitle: 'Public Housing Developments',
+    body: '<h4>Role and Mandate</h4><p>The Housing and Development Board is Singapore\'s public housing authority. For CORENET-X submissions involving HDB developments, HDB reviews residential layout, minimum room sizes, communal provisions and the spatial data that confirm a flat meets public housing design standards.</p><h4>What VERIFIQ Checks for HDB</h4><ul><li>IfcSpace classification and use for residential units in HDB developments</li><li>Minimum combined living and dining room area of not less than 16.0 square metres</li><li>Room area and headroom data on habitable IfcSpace elements</li><li>GFA category consistency across residential, communal and commercial spaces</li><li>Spatial containment of units within blocks and storeys (IfcBuildingStorey hierarchy)</li></ul><h4>Why It Matters</h4><p>HDB developments must meet defined minimum dwelling standards. If IfcSpace area or classification data is missing or below the minimum, HDB cannot verify that the units comply with public housing requirements, which will pend the submission until corrected.</p><a href="https://www.hdb.gov.sg" target="_blank" rel="noopener" class="modal-link">&#x1F517; hdb.gov.sg</a>&nbsp;<a href="https://go.gov.sg/ifcsg" target="_blank" rel="noopener" class="modal-link">&#x1F517; IFC+SG Shared Parameters</a>'
   }
 };
 
@@ -1179,7 +1193,7 @@ function vqShowMacNotice(box) {
 
   var title = document.createElement('div');
   title.style.cssText = 'font-weight:700;color:#f59e0b;font-size:13px;margin-bottom:10px';
-  title.textContent = '🚧 macOS version — under development';
+  title.textContent = '🚧 macOS version: under development';
 
   var msg1 = document.createElement('p');
   msg1.style.cssText = 'font-size:12px;color:#c8a855;line-height:1.7;margin:0 0 8px';
