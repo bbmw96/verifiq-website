@@ -60,7 +60,7 @@
     .nav-links { display: flex; align-items: center; gap: 28px; }
     .nav-links a { font-size: 13px; color: var(--mid); font-weight: 500; }
     .nav-links a:hover { color: var(--white); text-decoration: none; }
-    .btn-nav { background: var(--teal); color: var(--navy) !important; border-radius: 6px; padding: 7px 16px; font-size: 13px; font-weight: 700; transition: background .2s; }
+    .btn-nav { background: var(--teal); color: var(--navy) !important; border-radius: 6px; padding: 7px 16px; font-size: 13px; font-weight: 700; transition: background .2s; white-space: nowrap; display: inline-flex; align-items: center; gap: 5px; }
     .btn-nav:hover { background: var(--teal-dark); text-decoration: none !important; }
 
     /* HERO */
@@ -383,7 +383,7 @@
     <a href="#agencies">Agencies</a>
     <a href="#pricing">Pricing</a>
     <a href="#contact">Contact</a>
-    <a href="#" onclick="return vqDownload(event,'https://softsite.verifiq.bbmw0.com','launch')" class="btn-nav" style="background:transparent;color:var(--teal);border:1px solid var(--teal);margin-right:8px">&#x1F310; Launch Web App</a>
+    <a href="#" onclick="return vqDownload(event,'https://softsite.verifiq.bbmw0.com','launch')" class="btn-nav" style="background:transparent;color:var(--teal) !important;border:1px solid var(--teal);margin-right:8px">&#x1F310; Web App</a>
     <a href="#" onclick="return vqDownload(event,'https://github.com/bbmw96/verifiq/releases/download/v2.2.0/VERIFIQ-v2.2.0-Setup.exe')" class="btn-nav">&#x2B07; Download</a>
   </div>
 </nav>
