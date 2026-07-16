@@ -376,7 +376,7 @@
   </div>
   <div class="nav-links">
     <a href="#purpose">Why VERIFIQ</a>
-    <a href="#purpose">Why VERIFIQ</a>
+    <a href="#engines">Engines</a>
     <a href="#features">Features</a>
     <a href="#checks">Checks</a>
     <a href="#inputs">File Formats</a>
@@ -397,7 +397,8 @@
         <h1>IFC Compliance<br><span>Made Effortless</span></h1>
         <p class="hero-sub">VERIFIQ reads your IFC model and cross-checks every element against Singapore <strong>CORENET-X</strong> (IFC+SG COP 3.1, December 2025) and Malaysia <strong>NBeS/UBBL 1984</strong> requirements - verifying IFC class, classification codes, property sets and property values. 20 check levels. 100% offline.</p>
         <div class="hero-btns">
-          <a href="#" onclick="return vqDownload(event,'https://github.com/bbmw96/verifiq/releases/download/v2.2.0/VERIFIQ-v2.2.0-Setup.exe')" class="btn-primary">&#x2B07; Download Free Trial</a>
+          <a href="#" onclick="return vqDownload(event,'https://softsite.verifiq.bbmw0.com','launch')" class="btn-primary">&#x1F310; Launch Free Web App</a>
+          <a href="#" onclick="return vqDownload(event,'https://github.com/bbmw96/verifiq/releases/download/v2.2.0/VERIFIQ-v2.2.0-Setup.exe')" class="btn-outline">&#x2B07; Download Desktop</a>
           <a href="#features" class="btn-outline">See All Features &#x2192;</a>
         </div>
         <div class="hero-meta">
@@ -446,7 +447,7 @@
     <div class="stats-grid">
       <div class="stat-item"><div class="stat-num">20</div><div class="stat-label">Compliance Check Levels</div></div>
       <div class="stat-item"><div class="stat-num">206</div><div class="stat-label">COP 3.1 Classification Codes</div></div>
-      <div class="stat-item"><div class="stat-num">9</div><div class="stat-label">Singapore Regulatory Agencies</div></div>
+      <div class="stat-item"><div class="stat-num">10</div><div class="stat-label">Singapore Regulatory Agencies</div></div>
       <div class="stat-item"><div class="stat-num">21</div><div class="stat-label">Pages and Sections</div></div>
       <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Offline - Nothing Leaves Your Machine</div></div>
     </div>
@@ -475,9 +476,9 @@
       <div style="background:var(--navy-3);border:1px solid var(--border);border-radius:12px;padding:36px;position:relative;overflow:hidden;transition:border-color .25s,transform .25s" onmouseover="this.style.borderColor='rgba(0,196,160,.4)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
         <div style="font-size:68px;font-weight:900;color:rgba(0,196,160,.08);line-height:1;position:absolute;top:12px;right:20px;pointer-events:none;font-family:system-ui">2</div>
         <h3 style="font-size:18px;font-weight:800;margin-bottom:14px;color:var(--white)">Is the classification chain complete?</h3>
-        <p style="font-size:14px;color:var(--mid);line-height:1.8">When a classification code is present on an element (for example, <code style="background:rgba(0,196,160,.1);color:var(--teal);padding:1px 6px;border-radius:4px;font-family:monospace;font-size:12px">A-WAL-EXW-01</code> for an external wall), are all the related SGPset_ property sets and required property values also present? VERIFIQ checks the full classification-to-property chain for all 196 embedded IFC+SG COP 3.1 codes, per agency, per CORENET-X gateway.</p>
+        <p style="font-size:14px;color:var(--mid);line-height:1.8">When a classification code is present on an element (for example, <code style="background:rgba(0,196,160,.1);color:var(--teal);padding:1px 6px;border-radius:4px;font-family:monospace;font-size:12px">A-WAL-EXW-01</code> for an external wall), are all the related SGPset_ property sets and required property values also present? VERIFIQ checks the full classification-to-property chain for all 206 embedded IFC+SG COP 3.1 codes, per agency, per CORENET-X gateway.</p>
         <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap">
-          <span style="background:rgba(0,196,160,.1);color:var(--teal);border-radius:4px;padding:3px 10px;font-size:11px;font-weight:700;font-family:monospace">196 codes</span>
+          <span style="background:rgba(0,196,160,.1);color:var(--teal);border-radius:4px;padding:3px 10px;font-size:11px;font-weight:700;font-family:monospace">206 codes</span>
           <span style="background:rgba(0,196,160,.1);color:var(--teal);border-radius:4px;padding:3px 10px;font-size:11px;font-weight:700;font-family:monospace">SGPset_ chain</span>
           <span style="background:rgba(0,196,160,.1);color:var(--teal);border-radius:4px;padding:3px 10px;font-size:11px;font-weight:700;font-family:monospace">Per gateway</span>
         </div>
@@ -491,6 +492,32 @@
 </section>
 
 <!-- HOW IT WORKS -->
+<!-- SIGNATURE ENGINES -->
+<section class="section" id="engines" style="background:var(--navy-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:14px"><span class="hero-badge">&#x26A1; The VERIFIQ engines</span></div>
+    <h2 class="section-title" style="text-align:center">Seven engines. One submission you can trust.</h2>
+    <p style="text-align:center;max-width:780px;margin:0 auto 42px;color:var(--mid);font-size:15px;line-height:1.85">Every part of VERIFIQ is a purpose-built engine, tuned for Singapore CORENET-X (IFC+SG COP 3.1) and Malaysia NBeS. Nothing generic - each one is engineered for regulatory submission and works only inside VERIFIQ.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px">
+
+      <div class="feature"><div class="feature-icon">&#x1F6E1;</div><h3>VERIFIQ <span style="color:var(--teal)">Verdict</span></h3><div style="font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin:2px 0 10px">The compliance brain</div><p>Cross-checks every element across 20 check levels and all 10 CORENET-X agencies, then returns a clear pass or fail with the exact rule, the expected versus actual value, and the fix.</p><span class="feature-tag">20 levels &middot; 10 agencies</span></div>
+
+      <div class="feature"><div class="feature-icon">&#x1F3AF;</div><h3>VERIFIQ <span style="color:var(--teal)">Radar</span></h3><div style="font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin:2px 0 10px">Agency risk, at a glance</div><p>Maps every finding to the agency that regulates it - BCA, URA, SCDF, LTA, PUB, NEA, NParks, SLA, HDB, JTC - and ranks submission-blocking risk, top blockers and a costed action plan in the Director's Report.</p><span class="feature-tag">Submission readiness</span></div>
+
+      <div class="feature"><div class="feature-icon">&#x1F4D6;</div><h3>VERIFIQ <span style="color:var(--teal)">CodeSense</span></h3><div style="font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin:2px 0 10px">Ask the Code of Practice</div><p>A deterministic, citation-backed answer engine over the CORENET-X Code of Practice. Ask any requirement and get the ranked clauses with section and page references - grounded in the Code, never guessed.</p><span class="feature-tag">COP 3.1 &middot; cited</span></div>
+
+      <div class="feature"><div class="feature-icon">&#x1F9CA;</div><h3>VERIFIQ <span style="color:var(--teal)">Lens</span></h3><div style="font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin:2px 0 10px">See compliance in 3D</div><p>Renders your model in the browser and paints compliance status straight onto the geometry, so a violation is something you can see and click - not just a row in a table.</p><span class="feature-tag">web-ifc &middot; offline</span></div>
+
+      <div class="feature"><div class="feature-icon">&#x1F9EE;</div><h3>VERIFIQ <span style="color:var(--teal)">Quantify</span></h3><div style="font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin:2px 0 10px">Instant quantities</div><p>Turns the model into a measured take-off grouped by element and type, with volumes drawn from the IFC's own quantities where present. Export a clean bill to CSV in one click.</p><span class="feature-tag">BOQ &middot; CSV export</span></div>
+
+      <div class="feature"><div class="feature-icon">&#x270F;</div><h3>VERIFIQ <span style="color:var(--teal)">SmartFix</span></h3><div style="font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin:2px 0 10px">Fix without leaving VERIFIQ</div><p>Correct a property value and write a clean, corrected IFC on the spot. The original file is never touched - you get a new, submission-ready model and an edit log.</p><span class="feature-tag">Corrected IFC out</span></div>
+
+      <div class="feature"><div class="feature-icon">&#x1F916;</div><h3>VERIFIQ <span style="color:var(--teal)">Sage</span></h3><div style="font-size:12px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin:2px 0 10px">Your offline IFC+SG expert</div><p>An embedded assistant that answers IFC+SG and CORENET-X questions with zero API keys and nothing leaving your machine - the whole knowledge base ships inside VERIFIQ.</p><span class="feature-tag">Embedded &middot; private</span></div>
+
+    </div>
+  </div>
+</section>
+
 <section class="section" id="how">
   <div class="container">
     <div class="section-tag">How It Works</div>
